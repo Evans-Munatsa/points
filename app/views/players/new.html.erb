@@ -1,0 +1,10 @@
+<h2>New Player</h2>
+<%= simple_form_for :player, url: players_path do |f| %>
+<p>
+	<%= f.label :name %><br>
+	<%= f.text_field :name %>
+</p>
+<p>
+	<%= f.submit %>
+</p>
+<% end %>
