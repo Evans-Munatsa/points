@@ -2,7 +2,6 @@
   <table class="table table-striped">
     <thead>
       <tr>
-        <th>Position</th>
         <th>Player</th>
         <th>Assasin Points</th>
         <th>Noob points</th>
@@ -11,15 +10,20 @@
     <tbody>
       <% @players.each do |player| %>
       <tr>
-        <td></td>
-        <td><h4><%= link_to player.name, player %></h4></td>
-        <td></td>
-        <td></td>
+        <td><h4><%= link_to player.name, player %></h4>
+
+        </td>
+
+        <td>
+          <span class='glyphicon  glyphicon-menu-up glyphicon-aligh-left' aria-hidden='true'></span>
+        </td>
+
+        <td>
+          <span class='glyphicon  glyphicon-menu-down glyphicon-aligh-left' aria-hidden='true'></span>
+        </td>
       </tr>
       <% end %>
     </tbody>
   </table>
   <button class='btn btn-primary'><%= link_to 'New Player', new_player_path %></button>
-
 </div>
-
