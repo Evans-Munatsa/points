@@ -8,22 +8,27 @@
       </tr>
     </thead>
     <tbody>
-      <% @players.each do |player| %>
+      
       <tr>
-        <td><h4><%= link_to player.name, player %></h4>
-
-        </td>
-
         <td>
-          <span class='glyphicon  glyphicon-menu-up glyphicon-aligh-left' aria-hidden='true'></span>
+          <% @players.each do |player| %>
+          <h4><%= link_to player.name, player %></h4>
+           <% end %>
         </td>
-
+        
         <td>
           <span class='glyphicon  glyphicon-menu-down glyphicon-aligh-left' aria-hidden='true'></span>
+        </td> 
+
+        <td>
+          <% Noob.all.each do |noob| %>
+          <h4><%= link_to noob.points, noob %></h4>
+          <% end %>
         </td>
+
+        
       </tr>
-      <% end %>
-    </tbody>
+          </tbody>
   </table>
   <button class='btn btn-primary'><%= link_to 'New Player', new_player_path %></button>
 </div>

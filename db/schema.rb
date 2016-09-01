@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160829055539) do
+ActiveRecord::Schema.define(version: 20160831115312) do
+
+  create_table "noobs", force: :cascade do |t|
+    t.integer  "player_id",  limit: 4
+    t.integer  "points",     limit: 4
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
+  add_index "noobs", ["player_id"], name: "index_noobs_on_player_id", using: :btree
 
   create_table "players", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -37,4 +46,5 @@ ActiveRecord::Schema.define(version: 20160829055539) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "noobs", "players"
 end

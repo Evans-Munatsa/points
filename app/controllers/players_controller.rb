@@ -2,7 +2,11 @@ class PlayersController < ApplicationController
   before_action :set_player, only: [:show, :edit, :update, :destroy]
 
   def index
-    @players = Player.all.order('created_at DESC')
+    if params[:id].blank?
+      @players = Player.all
+    else
+      @players = Noob.find(params[:id]).players
+    end
   end
 
   def new
@@ -35,8 +39,8 @@ class PlayersController < ApplicationController
   end
 
   def destroy
-  	@player.destroy
-  	redirect_to @player
+    @player.destroy
+    redirect_to @player
   end
 
   private

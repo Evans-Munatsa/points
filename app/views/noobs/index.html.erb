@@ -1,0 +1,20 @@
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Player</th>
+        <th>Assasin Points</th>
+        <th>Noob points</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @noobs.each do |noob| %>
+      <tr>
+        <td><h4><%= link_to noob.points, noob %></h4>
+
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
