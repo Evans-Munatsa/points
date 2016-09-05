@@ -1,0 +1,9 @@
+<%= simple_form_for :assassin, url: player_assassins_path do |f| %>
+<div class="form-group">
+	<%= f.label :points %><br>
+	<%= f.text_field :points, class: 'form-control', placeholder: "Assassin Point"%>
+</div>
+
+
+	<%= f.submit 'Point', class: 'btn btn-primary'%>
+<% end %>

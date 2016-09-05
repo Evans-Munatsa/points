@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   
   resources :players do
   	resources :noobs
+  	resources :assassins
   end
 end
