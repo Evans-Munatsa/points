@@ -1,5 +1,8 @@
 class Player < ActiveRecord::Base
-  validates :name, presence: true
+  # include Counter::Cache
   belongs_to :user
   has_many :noobs
+
+  validates :name, presence: true
+
 end

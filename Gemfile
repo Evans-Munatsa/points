@@ -13,7 +13,7 @@ gem 'bootstrap-sass'
 gem 'pry-rails'
 gem 'pry-byebug'
 gem "simple_form"
-gem 'acts_as_votable'
+gem 'counter-cache'
 gem 'leaderboard', '~> 3.10'
 gem 'puma'
 gem 'ckeditor'

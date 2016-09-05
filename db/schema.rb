@@ -11,13 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160831115312) do
+ActiveRecord::Schema.define(version: 20160902081619) do
 
   create_table "noobs", force: :cascade do |t|
+    t.integer  "points",     limit: 4, default: 0, null: false
     t.integer  "player_id",  limit: 4
-    t.integer  "points",     limit: 4
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
   end
 
   add_index "noobs", ["player_id"], name: "index_noobs_on_player_id", using: :btree
