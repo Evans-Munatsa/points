@@ -27,7 +27,7 @@ class PlayersController < ApplicationController
   end
 
   def update
-    if @player.update(params[:player].permit(:name))
+    if @player.update(params[:player].permit(:name, :assassin, :noob))
       redirect_to @player
     else
       render 'edit'
@@ -42,13 +42,10 @@ class PlayersController < ApplicationController
   private
 
   def player_params
-    params.require(:player).permit(:name)
+    params.require(:player).permit(:name, :assassin, :noob)
   end
 
   def set_player
     @player = Player.find(params[:id])
-  rescue ActiveRecord::RecordNotFound
-    flash[:alert] = "The player you were looking for could not be found."
-    redirect_to players_path
   end
 end

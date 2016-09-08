@@ -1,2 +1,23 @@
-<h2>Edit Player</h2>
-<%= render 'form' %>
+<h2>Update Player</h2>
+
+
+<%= simple_form_for :player, url: players_path do |f| %>
+<div class="form-group">
+	<%= f.label :name %><br>
+	<%= f.text_field :name, class: 'form-control', placeholder: "Player Name"%>
+</div>
+
+<div class="form-group">
+	<%= f.label :assassin %><br>
+	<%= f.number_field :assassin, class: 'form-control', placeholder: "Assasin Points"%>
+</div>
+
+<div class="form-group">
+	<%= f.label :noob %><br>
+	<%= f.number_field :noob, class: 'form-control', placeholder: "Noob Points"%>
+</div>
+
+<div class='form-group'>
+	<%= f.submit 'Update', class: 'btn btn-primary'%>
+</div>
+<% end %>

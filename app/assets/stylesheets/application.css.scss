@@ -15,3 +15,13 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+
+form {
+	width: 200px;
+	display: -webkit-inline-box;
+}
+
+.form-group {
+    padding-left: 30px;
+}

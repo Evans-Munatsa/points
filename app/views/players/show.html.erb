@@ -1,5 +1,7 @@
 <h1 class='name'>
-	<%= @player.name %>
+	<p>Player: <%= @player.name %></p>
+	<p>Assassin: <%= @player.assassin %></p>
+	<p>Noobs: <%= @player.noob %></p>
 </h1>
 <%= link_to 'Edit', edit_player_path(@player), class: 'btn btn-primary btn-sm' %> 
 <%= link_to 'Back', players_path, class: 'btn btn-primary btn-sm' %>
