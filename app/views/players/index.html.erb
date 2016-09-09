@@ -1,32 +1,43 @@
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <h3 class="panel-title">Points Board</h3>
+  </div>
+  <div class="panel-body">
+    <div class="table-responsive panel panel-warning">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Player</th>
+            <th>Assasin Points</th>
+            <th>Noob points</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <% @players.each do |player| %>
+            <tr>
+              <td>
+                <h4><%= link_to player.name, player %></h4>
+              </td>
+              <td>
+                <h4><%= link_to player.assassin %></h4>
+              </td>
+              <td>
+                <h4><%= link_to player.noob %></h4>
+              </td>
+            </tr>
+            <% end %>
+            
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
 <div class="table-responsive">
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th>Player</th>
-        <th>Assasin Points</th>
-        <th>Noob points</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <% @players.each do |player| %>
-        <tr>
-        <td>
-          <h4><%= link_to player.name, player %></h4>
-        </td>
-        <td>
-          <h4><%= link_to player.assassin %></h4>
-        </td>
-        <td>
-          <h4><%= link_to player.noob %></h4>
-        </td>
-         </tr>
-        <% end %>  
-     
-    </tbody>
-  </table>
-</div>
-<hr>
-<div>
-  <%= render 'form' %>
+  <div class="panel panel-success">
+    <div class="panel-heading">
+       <%= render 'form' %>
+    </div>
+  </div>
 </div>
